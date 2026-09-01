@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "btw.community.htf.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "BlockMixin",
+    "BlockLogMixin",
+    "AxeItemMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
