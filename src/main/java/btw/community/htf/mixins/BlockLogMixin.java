@@ -26,6 +26,10 @@ public abstract class BlockLogMixin implements BlockExtension, LogBlockExtension
 
     @Inject(method = "convertBlock", at = @At("HEAD"), cancellable = true)
     private void convertToChoppedLog(ItemStack stack, World world, int x, int y, int z, int iFromSide, CallbackInfoReturnable<Boolean> cir) {
+        if (stack == null) {
+            return; // Don't convert without tool
+        }
+
         if (stack.getItem() instanceof AxeItem && htf$getIsValidTreeChoppingLog(world, x, y, z)) {
             Block thisBlock = (Block) (Object) this;
             convertToTreeChoppingLog(world, x, y, z, thisBlock.blockID);
