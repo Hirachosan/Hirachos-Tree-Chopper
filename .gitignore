@@ -3,7 +3,6 @@
 build/
 build_BTW/
 out/
-classes/
 
 # eclipse
 *.launch
